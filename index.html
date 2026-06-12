@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>T2ii Transport — Logistique Express Lyon · Île-de-France · International</title>
+  <meta name="description" content="T2ii Transport, spécialiste du transport logistique express entre Lyon, l'Île-de-France et l'international. Seul transporteur spécialisé vétérinaire de la région." />
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Clash Display via CDN (fontsource) -->
+  <link rel="preconnect" href="https://cdn.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- SCROLL PROGRESS LINE -->
+  <div class="scroll-progress-line" id="scrollLine"></div>
+
+  <!-- ══════════════════════════════════════════
+       NAVBAR — pilule liquide blur
+  ══════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <img src="public/images/logo.svg" alt="T2ii Transport" class="logo-img" />
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#avantages" class="nav-link">À propos</a></li>
+        <li><a href="#devis" class="nav-link">Devis</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <a href="#devis" class="btn-nav-cta">Demander un devis</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile overlay menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#services" class="mobile-link">Services</a></li>
+      <li><a href="#avantages" class="mobile-link">À propos</a></li>
+      <li><a href="#devis" class="mobile-link">Devis</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+      <li><a href="#devis" class="mobile-link mobile-cta">Demander un devis →</a></li>
+    </ul>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="public/images/hero-bg.jpg" alt="" class="hero-bg-img" aria-hidden="true" />
+      <div class="hero-bg-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-left">
+        <!-- Badge pill animée -->
+        <div class="hero-badge" id="heroBadge">
+          <span class="badge-dot"></span>
+          <span>Livraison express disponible 7j/7</span>
+        </div>
+
+        <!-- Titre Clash Display -->
+        <h1 class="hero-title" id="heroTitle">
+          <span class="hero-line" data-line="1">La livraison</span>
+          <span class="hero-line hero-line--accent" data-line="2">qui ne s'arrête</span>
+          <span class="hero-line" data-line="3">jamais.</span>
+        </h1>
+
+        <p class="hero-sub">
+          Lyon · Île-de-France · International<br />
+          <em>Spécialiste transport vétérinaire</em>
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#devis" class="btn-primary">Demander un devis</a>
+          <a href="#services" class="btn-ghost">
+            <span>Découvrir nos services</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Trust proof inline -->
+        <div class="hero-trust">
+          <div class="hero-trust-item">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Sous 24h garanti
+          </div>
+          <div class="hero-trust-sep"></div>
+          <div class="hero-trust-item">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Suivi GPS temps réel
+          </div>
+          <div class="hero-trust-sep"></div>
+          <div class="hero-trust-item">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            98% dans les délais
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero right — carte -->
+      <div class="hero-right">
+        <div class="hero-card" id="heroCard">
+          <img src="public/images/hero-road.jpg" alt="Transport express T2ii" class="hero-card-img" />
+          <!-- Tracker widget -->
+          <div class="tracker-widget">
+            <div class="tracker-header">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <span>Suivi en temps réel</span>
+            </div>
+            <div class="tracker-steps">
+              <div class="tracker-step active" data-step="0">
+                <div class="step-dot"></div>
+                <span>Prise en charge</span>
+              </div>
+              <div class="tracker-line"><div class="tracker-line-fill" id="line1"></div></div>
+              <div class="tracker-step active" data-step="1">
+                <div class="step-dot"></div>
+                <span>En transit</span>
+              </div>
+              <div class="tracker-line"><div class="tracker-line-fill" id="line2"></div></div>
+              <div class="tracker-step" data-step="2">
+                <div class="step-dot"></div>
+                <span>Livraison</span>
+              </div>
+              <div class="tracker-line"><div class="tracker-line-fill" id="line3"></div></div>
+              <div class="tracker-step" data-step="3">
+                <div class="step-dot"></div>
+                <span>Livré</span>
+              </div>
+            </div>
+            <div class="tracker-eta">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>ETA estimé : <strong>Aujourd'hui 18h30</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" id="scrollIndicator">
+      <div class="scroll-line"></div>
+      <span>Défiler</span>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       STATS / AVANTAGES CLÉS
+  ══════════════════════════════════════════ -->
+  <section class="trust-stats">
+    <div class="container">
+      <div class="trust-stats-grid">
+
+        <div class="trust-stat-item reveal" style="--delay:0s">
+          <div class="trust-stat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="trust-stat-body">
+            <div class="trust-stat-value">Agréé</div>
+            <div class="trust-stat-label">Transporteur certifié</div>
+          </div>
+        </div>
+
+        <div class="trust-stat-divider"></div>
+
+        <div class="trust-stat-item reveal" style="--delay:0.08s">
+          <div class="trust-stat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="trust-stat-body">
+            <div class="trust-stat-value">2h</div>
+            <div class="trust-stat-label">Réponse garantie</div>
+          </div>
+        </div>
+
+        <div class="trust-stat-divider"></div>
+
+        <div class="trust-stat-item reveal" style="--delay:0.16s">
+          <div class="trust-stat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div class="trust-stat-body">
+            <div class="trust-stat-value">GPS</div>
+            <div class="trust-stat-label">Suivi temps réel</div>
+          </div>
+        </div>
+
+        <div class="trust-stat-divider"></div>
+
+        <div class="trust-stat-item reveal" style="--delay:0.24s">
+          <div class="trust-stat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="trust-stat-body">
+            <div class="trust-stat-value">98%</div>
+            <div class="trust-stat-label">Dans les délais</div>
+          </div>
+        </div>
+
+        <div class="trust-stat-divider"></div>
+
+        <div class="trust-stat-item reveal" style="--delay:0.32s">
+          <div class="trust-stat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h2m16 0h2M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/><circle cx="12" cy="12" r="4"/></svg>
+          </div>
+          <div class="trust-stat-body">
+            <div class="trust-stat-value">−18°C</div>
+            <div class="trust-stat-label">Chaîne du froid</div>
+          </div>
+        </div>
+
+        <div class="trust-stat-divider"></div>
+
+        <div class="trust-stat-item reveal" style="--delay:0.4s">
+          <div class="trust-stat-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 9.5a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/><path d="M15.5 9.5a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/><path d="M9 4.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/><path d="M15 4.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/><path d="M12 14c-3.314 0-6 2.686-6 6h12c0-3.314-2.686-6-6-6z"/></svg>
+          </div>
+          <div class="trust-stat-body">
+            <div class="trust-stat-value">#1</div>
+            <div class="trust-stat-label">Transport vétérinaire</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SERVICES
+  ══════════════════════════════════════════ -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-eyebrow">Ce que nous faisons</p>
+        <h2 class="section-title">Une expertise,<br /><em>trois spécialités.</em></h2>
+        <p class="section-intro">Chaque envoi est différent. Nos services sont conçus pour répondre précisément à votre besoin, sans compromis sur les délais ni sur la sécurité.</p>
+      </div>
+
+      <!-- Service vétérinaire — grande bande -->
+      <div class="service-featured reveal">
+        <div class="service-featured-img">
+          <img src="public/images/service-veto.jpg" alt="Transport vétérinaire spécialisé" />
+          <div class="service-img-overlay"></div>
+          <div class="service-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Spécialité exclusive
+          </div>
+        </div>
+        <div class="service-featured-body">
+          <div class="service-icon service-icon--vet">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M4.5 9.5a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/><path d="M15.5 9.5a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/>
+              <path d="M9 4.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/><path d="M15 4.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+              <path d="M12 14c-3.314 0-6 2.686-6 6h12c0-3.314-2.686-6-6-6z"/>
+            </svg>
+          </div>
+          <h3>Transport Vétérinaire Spécialisé</h3>
+          <p>Seul transporteur de la région formé aux exigences du secteur vétérinaire. Médicaments, échantillons biologiques, matériel chirurgicale... Nous gérons la chaîne du froid et les urgences 24h.</p>
+          <ul class="service-features">
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Chaîne du froid garantie</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Urgences prises en charge</li>
+            <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Conformité réglementaire totale</li>
+          </ul>
+          <a href="#devis" class="service-link">Obtenir un devis <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <!-- Cards services express + international -->
+      <div class="services-grid">
+        <div class="service-card reveal" style="--delay: 0.1s">
+          <div class="service-card-img">
+            <img src="public/images/service-express.jpg" alt="Livraison express Île-de-France" />
+            <div class="service-img-overlay"></div>
+          </div>
+          <div class="service-card-body">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <h3>Livraison Express<br />Île-de-France</h3>
+            <p>Délais garantis, livraison sous 24h dans toute l'Île-de-France. Prise en charge le jour même sur demande.</p>
+            <ul class="service-features">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Sous 24h garanti</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Suivi GPS temps réel</li>
+            </ul>
+            <a href="#devis" class="service-link">En savoir + <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+
+        <div class="service-card reveal" style="--delay: 0.2s">
+          <div class="service-card-img">
+            <img src="public/images/service-international.jpg" alt="Transport international Europe" />
+            <div class="service-img-overlay"></div>
+          </div>
+          <div class="service-card-body">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3>Transport<br />International</h3>
+            <p>Départs réguliers vers toute l'Europe. Partenariats solides avec les principaux hubs logistiques du continent.</p>
+            <ul class="service-features">
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Réseau paneuropéen</li>
+              <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Documents douaniers pris en charge</li>
+            </ul>
+            <a href="#devis" class="service-link">En savoir + <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       AVANTAGES
+  ══════════════════════════════════════════ -->
+  <section class="avantages" id="avantages">
+    <div class="container">
+      <div class="avantages-inner">
+
+        <div class="avantages-left">
+          <p class="section-eyebrow section-eyebrow--light">Pourquoi T2ii ?</p>
+          <h2 class="section-title section-title--light reveal">Ce qui nous rend<br /><em>différents.</em></h2>
+
+          <div class="avantages-list">
+            <div class="avantage-item reveal" style="--delay:0.05s">
+              <div class="avantage-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
+              <div>
+                <div class="avantage-stat"><span class="counter" data-target="24">0</span>h</div>
+                <h4>Livraison Express</h4>
+                <p>Sous 24h en Île-de-France, prise en charge le jour même disponible sur appel.</p>
+              </div>
+            </div>
+
+            <div class="avantage-item reveal" style="--delay:0.1s">
+              <div class="avantage-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <div>
+                <div class="avantage-stat"><span class="counter" data-target="12">0</span> pays</div>
+                <h4>Réseau International</h4>
+                <p>Partenaires certifiés dans toute l'Europe pour des expéditions sans frontières.</p>
+              </div>
+            </div>
+
+            <div class="avantage-item reveal" style="--delay:0.15s">
+              <div class="avantage-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 9.5a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/><path d="M15.5 9.5a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/><path d="M9 4.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/><path d="M15 4.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/><path d="M12 14c-3.314 0-6 2.686-6 6h12c0-3.314-2.686-6-6-6z"/></svg>
+              </div>
+              <div>
+                <div class="avantage-stat">#<span class="counter" data-target="1">0</span></div>
+                <h4>Transport Vétérinaire</h4>
+                <p>Seul transporteur spécialisé de la région. Formation et accréditations spécifiques.</p>
+              </div>
+            </div>
+
+            <div class="avantage-item reveal" style="--delay:0.2s">
+              <div class="avantage-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <div>
+                <div class="avantage-stat"><span class="counter" data-target="98">0</span>%</div>
+                <h4>Fiabilité</h4>
+                <p>Traçabilité GPS en temps réel. 98% de livraisons dans les délais annoncés.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SVG map droite -->
+        <div class="avantages-right reveal">
+          <div class="map-container">
+            <svg class="map-svg" viewBox="0 0 400 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="mapGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#1a5cdb" stop-opacity="0.3"/>
+                  <stop offset="100%" stop-color="#0b1d3a" stop-opacity="0"/>
+                </radialGradient>
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                  <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+              <circle cx="200" cy="225" r="180" fill="url(#mapGlow)"/>
+              <path d="M160 60 L210 50 L260 70 L300 110 L310 150 L300 180 L320 210 L315 250 L290 280 L270 320 L230 350 L190 360 L160 340 L130 310 L110 270 L100 230 L90 190 L100 150 L120 110 L140 80 Z"
+                fill="#1a3a72" stroke="#1a5cdb" stroke-width="1.5" opacity="0.8"/>
+              <g filter="url(#glow)">
+                <!-- Lyon -->
+                <circle cx="230" cy="270" r="6" fill="#ffffff" opacity="0.9"/>
+                <circle cx="230" cy="270" r="12" fill="#1a5cdb" opacity="0.3" class="pulse-ring"/>
+                <text x="245" y="275" fill="#ffffff" font-size="11" font-family="Inter" font-weight="600" opacity="0.9">Lyon</text>
+                <!-- Paris -->
+                <circle cx="185" cy="155" r="6" fill="#ffffff" opacity="0.9"/>
+                <circle cx="185" cy="155" r="12" fill="#1a5cdb" opacity="0.3" class="pulse-ring"/>
+                <text x="198" y="160" fill="#ffffff" font-size="11" font-family="Inter" font-weight="600" opacity="0.9">Paris</text>
+                <!-- Marseille -->
+                <circle cx="235" cy="340" r="4" fill="#5a7ab8"/>
+                <text x="248" y="345" fill="#5a7ab8" font-size="10" font-family="Inter" opacity="0.7">Marseille</text>
+                <!-- Bordeaux -->
+                <circle cx="145" cy="295" r="4" fill="#5a7ab8"/>
+                <text x="110" y="290" fill="#5a7ab8" font-size="10" font-family="Inter" opacity="0.7">Bordeaux</text>
+                <!-- Lille -->
+                <circle cx="185" cy="90" r="4" fill="#5a7ab8"/>
+                <text x="196" y="95" fill="#5a7ab8" font-size="10" font-family="Inter" opacity="0.7">Lille</text>
+              </g>
+              <path id="routeLine" d="M230 270 Q200 220 185 155"
+                stroke="#1a5cdb" stroke-width="2" stroke-dasharray="5 4" fill="none" opacity="0.7"/>
+              <g id="truckOnMap">
+                <rect x="-8" y="-5" width="14" height="9" rx="2" fill="#1a5cdb"/>
+                <rect x="4" y="-5" width="7" height="6" rx="1" fill="#2d6ef0"/>
+                <circle cx="-4" cy="4" r="2.5" fill="#ffffff"/>
+                <circle cx="8" cy="4" r="2.5" fill="#ffffff"/>
+              </g>
+              <line x1="230" y1="270" x2="310" y2="210" stroke="#1a5cdb" stroke-width="1" stroke-dasharray="4 6" opacity="0.4"/>
+              <line x1="185" y1="155" x2="310" y2="210" stroke="#1a5cdb" stroke-width="1" stroke-dasharray="4 6" opacity="0.4"/>
+              <line x1="185" y1="155" x2="185" y2="90" stroke="#1a5cdb" stroke-width="1" stroke-dasharray="4 6" opacity="0.4"/>
+              <text x="315" y="215" fill="#5a7ab8" font-size="9" font-family="Inter" opacity="0.6">Europe</text>
+            </svg>
+
+            <div class="map-pill map-pill--1">
+              <span class="pill-dot"></span> Express 24h
+            </div>
+            <div class="map-pill map-pill--2">
+              <span class="pill-dot"></span> International
+            </div>
+            <div class="map-pill map-pill--3">
+              <span class="pill-dot"></span> Vétérinaire ✓
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       DEVIS
+  ══════════════════════════════════════════ -->
+  <section class="devis" id="devis">
+    <div class="container">
+      <div class="devis-inner">
+        <div class="devis-left reveal">
+          <p class="section-eyebrow">Gratuit · Sans engagement</p>
+          <h2 class="section-title">Obtenir un<br /><em>devis gratuit.</em></h2>
+          <p class="devis-pitch">Réponse sous 2h en jours ouvrés. Pour les urgences vétérinaires, appelez directement.</p>
+          <div class="devis-contact-info">
+            <div class="contact-row">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.4a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.81-.81a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>+33 X XX XX XX XX</span>
+            </div>
+            <div class="contact-row">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>contact@t2ii.fr</span>
+            </div>
+            <div class="contact-row">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Lun–Sam · 10h–20h</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="devis-form-wrap reveal" style="--delay:0.15s">
+          <form class="devis-form" id="devisForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nom">Nom complet *</label>
+                <input type="text" id="nom" name="nom" placeholder="Jean Dupont" autocomplete="name" />
+                <span class="form-error" id="nomErr"></span>
+              </div>
+              <div class="form-group">
+                <label for="entreprise">Entreprise</label>
+                <input type="text" id="entreprise" name="entreprise" placeholder="Mon Entreprise SARL" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email professionnel *</label>
+                <input type="email" id="email" name="email" placeholder="contact@entreprise.fr" autocomplete="email" />
+                <span class="form-error" id="emailErr"></span>
+              </div>
+              <div class="form-group">
+                <label for="tel">Téléphone *</label>
+                <input type="tel" id="tel" name="tel" placeholder="+33 6 XX XX XX XX" autocomplete="tel" />
+                <span class="form-error" id="telErr"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="type">Type de transport *</label>
+              <div class="select-wrap">
+                <select id="type" name="type">
+                  <option value="">Sélectionner un service…</option>
+                  <option value="express">Express Île-de-France</option>
+                  <option value="international">Transport International</option>
+                  <option value="veterinaire">Spécialité Vétérinaire</option>
+                  <option value="autre">Autre</option>
+                </select>
+                <svg class="select-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <span class="form-error" id="typeErr"></span>
+            </div>
+            <div class="form-group">
+              <label for="message">Description de la demande *</label>
+              <textarea id="message" name="message" rows="4" placeholder="Décrivez votre besoin : nature du colis, destination, délai souhaité…"></textarea>
+              <span class="form-error" id="messageErr"></span>
+            </div>
+            <button type="submit" class="btn-submit" id="submitBtn">
+              <span class="btn-submit-text">Envoyer ma demande</span>
+              <svg class="btn-submit-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h4>Demande envoyée !</h4>
+            <p>Nous vous répondons sous 2h en jours ouvrés. À très vite.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       À PROPOS
+  ══════════════════════════════════════════ -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-img reveal">
+          <img src="public/images/team.jpg" alt="L'équipe T2ii Transport" />
+          <div class="about-img-badge">
+            <div>Basés à</div>
+            <strong>Lyon, France</strong>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="section-eyebrow">Qui sommes-nous</p>
+          <h2 class="section-title reveal">Une équipe à votre<br /><em>service depuis le premier jour.</em></h2>
+          <p class="reveal" style="--delay:0.05s">T2ii Transport est né d'une conviction simple : le transport logistique mérite plus de réactivité, plus de transparence, et une vraie spécialisation là où elle compte notamment dans le secteur vétérinaire, trop souvent négligé par les grands opérateurs.</p>
+          <p class="reveal" style="--delay:0.1s">Basés à Lyon, nous intervenons chaque jour en Île-de-France et au-delà des frontières françaises. Petite structure, grande exigence.</p>
+          <div class="about-values reveal" style="--delay:0.15s">
+            <div class="value-tag">Réactivité</div>
+            <div class="value-tag">Fiabilité</div>
+            <div class="value-tag">Spécialisation</div>
+            <div class="value-tag">Transparence</div>
+          </div>
+          <div class="about-hours reveal" style="--delay:0.2s">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <div>
+              <strong>Lundi – Samedi</strong>
+              <span>10h00 – 20h00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     AVIS CLIENTS — À insérer dans index.html, avant <footer>
+════════════════════════════════════════════════════════ -->
+<section class="avis" id="avis">
+  <div class="container">
+
+    <!-- Header -->
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Avis clients</span>
+      <h2 class="section-title">Ce que disent nos <em>clients</em></h2>
+      <p class="section-intro">Des entreprises et particuliers nous font confiance chaque jour pour leurs transports.</p>
+    </div>
+
+    <!-- Score global -->
+    <div class="avis-score-wrap reveal">
+      <div class="avis-score-num">4.9</div>
+      <div class="avis-score-divider"></div>
+      <div class="avis-score-detail">
+        <div class="avis-stars">
+          <!-- Star 1 -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2L22 9.3l-5 5 1.2 7L12 18l-6.2 3.3L7 14.3 2 9.3l7.1-1.1L12 2z"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2L22 9.3l-5 5 1.2 7L12 18l-6.2 3.3L7 14.3 2 9.3l7.1-1.1L12 2z"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2L22 9.3l-5 5 1.2 7L12 18l-6.2 3.3L7 14.3 2 9.3l7.1-1.1L12 2z"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2L22 9.3l-5 5 1.2 7L12 18l-6.2 3.3L7 14.3 2 9.3l7.1-1.1L12 2z"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2L22 9.3l-5 5 1.2 7L12 18l-6.2 3.3L7 14.3 2 9.3l7.1-1.1L12 2z"/></svg>
+        </div>
+        <div class="avis-count">Basé sur 148 avis vérifiés</div>
+        <div class="avis-platforms">
+          <div class="avis-platform-row">
+            <span class="platform-dot platform-dot--google"></span>
+            Google · 4.9/5 (112 avis)
+          </div>
+          <div class="avis-platform-row">
+            <span class="platform-dot platform-dot--fb"></span>
+            Facebook · 4.8/5 (36 avis)
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grille d'avis -->
+    <div class="avis-grid">
+
+      <!-- Avis 1 -->
+      <div class="avis-card reveal" style="--delay:0.05s">
+        <svg class="avis-quote-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+        <div class="avis-card-stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2L22 9.3l-5 5 1.2 7L12 18l-6.2 3.3L7 14.3 2 9.3l7.1-1.1L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2L22 9.3l-5 5 1.2 7L12 18l-6.2 3.3L7 14.3 2 9.3l7.1-1.1L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2L22 9.3l-5 5 1.2 7L12 18l-6.2 3.3L7 14.3 2 9.3l7.1-1.1L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2L22 9.3l-5 5 1.2 7L12 18l-6.2 3.3L7 14.3 2 9.3l7.1-1.1L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2L22 9.3l-5 5 1.2 7L12 18l-6.2 3.3L7 14.3 2 9.3l7.1-1.1L12 2z"/></svg>
+        </div>
+        <p class="avis-card-text">Livraison impeccable pour notre entreprise. Chauffeur ponctuel, marchandise en parfait état. Nous faisons appel à T2II Transport régulièrement depuis 2 ans, jamais de mauvaise surprise.</p>
+        <div class="avis-card-footer">
+          <div class="avis-author">
+            <div class="avis-avatar">ML</div>
+            <div class="avis-author-info">
+              <span class="avis-author-name">Marc L.</span>
+              <span class="avis-author-meta">Directeur logistique · il y a 3 jours</span>
+            </div>
+          </div>
+          <div class="avis-source">
+            <span class="avis-source-dot avis-source-dot--google"></span>
+            Google
+          </div>
+        </div>
+      </div>
+
+      <!-- Avis 2 -->
+      <div class="avis-card reveal" style="--delay:0.12s">
+        <svg class="avis-quote-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+        <div class="avis-card-stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2L22 9.3l-5 5 1.2 7L12 18l-6.2 3.3L7 14.3 2 9.3l7.1-1.1L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2L22 9.3l-5 5 1.2 7L12 18l-6.2 3.3L7 14.3 2 9.3l7.1-1.1L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2L22 9.3l-5 5 1.2 7L12 18l-6.2 3.3L7 14.3 2 9.3l7.1-1.1L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2L22 9.3l-5 5 1.2 7L12 18l-6.2 3.3L7 14.3 2 9.3l7.1-1.1L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2L22 9.3l-5 5 1.2 7L12 18l-6.2 3.3L7 14.3 2 9.3l7.1-1.1L12 2z"/></svg>
+        </div>
+        <p class="avis-card-text">Transport de véhicule de luxe géré avec le plus grand soin. Suivi en temps réel très pratique. Équipe réactive et professionnelle, je recommande sans hésiter.</p>
+        <div class="avis-card-footer">
+          <div class="avis-author">
+            <div class="avis-avatar" style="background: linear-gradient(160deg,#5c9bff,#1a5cdb)">SB</div>
+            <div class="avis-author-info">
+              <span class="avis-author-name">Sophie B.</span>
+              <span class="avis-author-meta">Particulière · il y a 1 semaine</span>
+            </div>
+          </div>
+          <div class="avis-source">
+            <span class="avis-source-dot avis-source-dot--google"></span>
+            Google
+          </div>
+        </div>
+      </div>
+
+      <!-- Avis 3 -->
+      <div class="avis-card reveal" style="--delay:0.19s">
+        <svg class="avis-quote-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+        <div class="avis-card-stars">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2L22 9.3l-5 5 1.2 7L12 18l-6.2 3.3L7 14.3 2 9.3l7.1-1.1L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2L22 9.3l-5 5 1.2 7L12 18l-6.2 3.3L7 14.3 2 9.3l7.1-1.1L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2L22 9.3l-5 5 1.2 7L12 18l-6.2 3.3L7 14.3 2 9.3l7.1-1.1L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2L22 9.3l-5 5 1.2 7L12 18l-6.2 3.3L7 14.3 2 9.3l7.1-1.1L12 2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2L22 9.3l-5 5 1.2 7L12 18l-6.2 3.3L7 14.3 2 9.3l7.1-1.1L12 2z"/></svg>
+        </div>
+        <p class="avis-card-text">Excellent service pour un déménagement longue distance Paris–Lyon. Tout s'est déroulé exactement comme prévu. Devis clair, pas de mauvaises surprises. Merci !</p>
+        <div class="avis-card-footer">
+          <div class="avis-author">
+            <div class="avis-avatar" style="background: linear-gradient(160deg,#34d399,#059669)">JD</div>
+            <div class="avis-author-info">
+              <span class="avis-author-name">Jean D.</span>
+              <span class="avis-author-meta">Particulier · il y a 2 semaines</span>
+            </div>
+          </div>
+          <div class="avis-source">
+            <span class="avis-source-dot avis-source-dot--fb"></span>
+            Facebook
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /avis-grid -->
+
+    <!-- CTA bas -->
+    <div class="avis-cta reveal">
+      <a href="https://g.page/r/VOTRE-LIEN-GOOGLE" target="_blank" rel="noopener" class="btn-primary">
+        Laisser un avis Google
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+      <p class="avis-cta-note">Votre retour nous aide à progresser et rassure nos futurs clients.</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer class="footer" id="contact">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-col footer-brand reveal" style="--delay:0s">
+          <div class="logo logo--light">
+            <span class="logo-t2">T2ii</span>
+            <span class="logo-sub">Transport</span>
+          </div>
+          <p>Transport logistique express. Lyon · Île-de-France · International · Vétérinaire.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Instagram" class="social-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook" class="social-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col reveal" style="--delay:0.1s">
+          <h5>Navigation</h5>
+          <ul>
+            <li><a href="#services">Nos services</a></li>
+            <li><a href="#avantages">Pourquoi T2ii</a></li>
+            <li><a href="#devis">Demander un devis</a></li>
+            <li><a href="#about">À propos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col reveal" style="--delay:0.17s">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="#services">Express Île-de-France</a></li>
+            <li><a href="#services">Transport International</a></li>
+            <li><a href="#services">Spécialité Vétérinaire</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col reveal" style="--delay:0.24s">
+          <h5>Contact</h5>
+          <ul>
+            <li>
+              <a href="tel:+33XXXXXXXXX">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.4a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.81-.81a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                +33 X XX XX XX XX
+              </a>
+            </li>
+            <li>
+              <a href="mailto:contact@t2ii.fr">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                contact@t2ii.fr
+              </a>
+            </li>
+            <li>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Lyon, France
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025 T2ii Transport. Tous droits réservés.</span>
+        <div class="footer-legal">
+          <a href="#">Mentions légales</a>
+          <a href="#">Politique de confidentialité</a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+    
+  </footer>
+
+
+
+
+  <script src="js/main.js"></script>
+</body>
+</html>
