@@ -243,3 +243,87 @@ window.addEventListener('scroll', () => {
   updateNavbar();
   updateParallax();
 }, { passive: true });
+
+/* ─── 3D CARD TILT ──────────────────────────────────────── */
+function initTilt() {
+  if (window.matchMedia('(hover: none)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  document.querySelectorAll('[data-tilt]').forEach(card => {
+    const intensity = parseFloat(card.dataset.tiltIntensity) || 10;
+
+    card.addEventListener('mouseenter', () => card.classList.add('is-tilting'));
+    card.addEventListener('mouseleave', () => {
+      card.classList.remove('is-tilting');
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+      card.style.setProperty('--mx', '50%');
+      card.style.setProperty('--my', '50%');
+    });
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      const rotX = (y - 0.5) * -intensity;
+      const rotY = (x - 0.5) * intensity;
+      card.style.transform =
+        `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+      card.style.setProperty('--mx', `${x * 100}%`);
+      card.style.setProperty('--my', `${y * 100}%`);
+    });
+  });
+}
+
+/* ─── CURSOR GLOW ───────────────────────────────────────── */
+function initCursorGlow() {
+  if (window.matchMedia('(hover: none)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const glow = document.getElementById('cursorGlow');
+  if (!glow) return;
+
+  let raf;
+  let cx = -999, cy = -999;
+  let visible = false;
+
+  document.addEventListener('mousemove', e => {
+    cx = e.clientX; cy = e.clientY;
+    if (!visible) {
+      glow.style.opacity = '1';
+      visible = true;
+    }
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(() => {
+      glow.style.left = cx + 'px';
+      glow.style.top  = cy + 'px';
+    });
+  }, { passive: true });
+
+  document.addEventListener('mouseleave', () => {
+    glow.style.opacity = '0';
+    visible = false;
+  });
+}
+
+/* ─── MAGNETIC BUTTONS ──────────────────────────────────── */
+function initMagneticBtns() {
+  if (window.matchMedia('(hover: none)').matches) return;
+
+  document.querySelectorAll('.btn-primary, .btn-nav-cta').forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const rect = btn.getBoundingClientRect();
+      const dx = e.clientX - (rect.left + rect.width / 2);
+      const dy = e.clientY - (rect.top  + rect.height / 2);
+      btn.style.transform = `translate(${dx * 0.18}px, ${dy * 0.18}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
+  });
+}
+
+/* ─── INIT 3D EFFECTS ───────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', () => {
+  initTilt();
+  initCursorGlow();
+  initMagneticBtns();
+});

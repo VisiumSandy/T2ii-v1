@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
   <!-- SCROLL PROGRESS LINE -->
   <div class="scroll-progress-line" id="scrollLine"></div>
@@ -66,6 +67,25 @@
     <div class="hero-bg">
       <img src="public/images/hero-bg.jpg" alt="" class="hero-bg-img" aria-hidden="true" />
       <div class="hero-bg-overlay"></div>
+      <div class="hero-orbs" aria-hidden="true">
+        <div class="hero-orb hero-orb--1"></div>
+        <div class="hero-orb hero-orb--2"></div>
+        <div class="hero-orb hero-orb--3"></div>
+      </div>
+      <div class="hero-particles" aria-hidden="true">
+        <span class="particle" style="left:7%;bottom:20%;--dur:9s;--delay:0s;--x:14px"></span>
+        <span class="particle" style="left:15%;bottom:35%;--dur:11s;--delay:1.5s;--x:-18px;width:3px;height:3px"></span>
+        <span class="particle" style="left:25%;bottom:15%;--dur:8s;--delay:3s;--x:10px"></span>
+        <span class="particle" style="left:38%;bottom:40%;--dur:13s;--delay:0.5s;--x:-12px;width:1.5px;height:1.5px"></span>
+        <span class="particle" style="left:48%;bottom:22%;--dur:10s;--delay:2s;--x:20px"></span>
+        <span class="particle" style="left:57%;bottom:50%;--dur:7s;--delay:4s;--x:-16px;width:3px;height:3px"></span>
+        <span class="particle" style="left:63%;bottom:18%;--dur:12s;--delay:1s;--x:12px"></span>
+        <span class="particle" style="left:74%;bottom:30%;--dur:9s;--delay:5s;--x:-10px;width:1.5px;height:1.5px"></span>
+        <span class="particle" style="left:82%;bottom:25%;--dur:11s;--delay:2.5s;--x:18px"></span>
+        <span class="particle" style="left:90%;bottom:42%;--dur:8s;--delay:0.8s;--x:-14px"></span>
+        <span class="particle" style="left:20%;bottom:60%;--dur:14s;--delay:6s;--x:8px;width:1px;height:1px"></span>
+        <span class="particle" style="left:67%;bottom:65%;--dur:10s;--delay:3.5s;--x:-20px;width:2.5px;height:2.5px"></span>
+      </div>
     </div>
 
     <div class="hero-content">
@@ -117,7 +137,7 @@
 
       <!-- Hero right — carte -->
       <div class="hero-right">
-        <div class="hero-card" id="heroCard">
+        <div class="hero-card" id="heroCard" data-tilt data-tilt-intensity="7">
           <img src="public/images/hero-road.jpg" alt="Transport express T2ii" class="hero-card-img" />
           <!-- Tracker widget -->
           <div class="tracker-widget">
@@ -244,6 +264,99 @@
   </section>
 
   <!-- ══════════════════════════════════════════
+       COMMENT ÇA MARCHE — inspiré 21st.dev Order History
+  ══════════════════════════════════════════ -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="process-inner">
+
+        <div class="process-left">
+          <p class="section-eyebrow">Simple &amp; rapide</p>
+          <h2 class="section-title reveal">Comment ça<br /><em>fonctionne.</em></h2>
+          <p class="process-intro reveal" style="--delay:0.06s">De la demande à la livraison, T2ii prend en charge chaque étape. Pas de surprise, pas d'attente — juste une logistique qui tourne.</p>
+          <a href="#devis" class="btn-primary reveal" style="--delay:0.12s">Démarrer maintenant</a>
+        </div>
+
+        <div class="process-right reveal" style="--delay:0.1s">
+          <div class="process-timeline">
+
+            <div class="process-step completed">
+              <div class="process-step-left">
+                <div class="process-step-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                </div>
+                <div class="process-connector"></div>
+              </div>
+              <div class="process-step-body">
+                <span class="process-step-tag">Étape 1</span>
+                <h4>Demande de devis</h4>
+                <p>Formulaire en ligne ou appel direct. Réponse garantie sous 2h en jours ouvrés.</p>
+              </div>
+            </div>
+
+            <div class="process-step completed">
+              <div class="process-step-left">
+                <div class="process-step-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.4a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.81-.81a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div class="process-connector"></div>
+              </div>
+              <div class="process-step-body">
+                <span class="process-step-tag">Étape 2</span>
+                <h4>Confirmation &amp; devis</h4>
+                <p>Notre équipe valide les détails et vous envoie un devis ferme sans engagement.</p>
+              </div>
+            </div>
+
+            <div class="process-step active">
+              <div class="process-step-left">
+                <div class="process-step-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                </div>
+                <div class="process-connector"></div>
+              </div>
+              <div class="process-step-body">
+                <span class="process-step-tag process-step-tag--active">En cours</span>
+                <h4>Prise en charge</h4>
+                <p>Collecte à votre adresse selon le créneau convenu. Conditionnement adapté à votre marchandise.</p>
+              </div>
+            </div>
+
+            <div class="process-step pending">
+              <div class="process-step-left">
+                <div class="process-step-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+                <div class="process-connector"></div>
+              </div>
+              <div class="process-step-body">
+                <span class="process-step-tag">Étape 4</span>
+                <h4>Suivi GPS temps réel</h4>
+                <p>Tracez votre envoi à chaque instant. Notifications automatiques à chaque étape.</p>
+              </div>
+            </div>
+
+            <div class="process-step pending last">
+              <div class="process-step-left">
+                <div class="process-step-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+              </div>
+              <div class="process-step-body">
+                <span class="process-step-tag">Étape 5</span>
+                <h4>Livraison confirmée</h4>
+                <p>Réception à destination avec confirmation et compte-rendu de livraison.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
        SERVICES
   ══════════════════════════════════════════ -->
   <section class="services" id="services">
@@ -285,7 +398,7 @@
 
       <!-- Cards services express + international -->
       <div class="services-grid">
-        <div class="service-card reveal" style="--delay: 0.1s">
+        <div class="service-card reveal" style="--delay: 0.1s" data-tilt>
           <div class="service-card-img">
             <img src="public/images/service-express.jpg" alt="Livraison express Île-de-France" />
             <div class="service-img-overlay"></div>
@@ -304,7 +417,7 @@
           </div>
         </div>
 
-        <div class="service-card reveal" style="--delay: 0.2s">
+        <div class="service-card reveal" style="--delay: 0.2s" data-tilt>
           <div class="service-card-img">
             <img src="public/images/service-international.jpg" alt="Transport international Europe" />
             <div class="service-img-overlay"></div>
@@ -619,7 +732,7 @@
     <div class="avis-grid">
 
       <!-- Avis 1 -->
-      <div class="avis-card reveal" style="--delay:0.05s">
+      <div class="avis-card reveal" style="--delay:0.05s" data-tilt data-tilt-intensity="6">
         <svg class="avis-quote-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
         <div class="avis-card-stars">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2L22 9.3l-5 5 1.2 7L12 18l-6.2 3.3L7 14.3 2 9.3l7.1-1.1L12 2z"/></svg>
@@ -645,7 +758,7 @@
       </div>
 
       <!-- Avis 2 -->
-      <div class="avis-card reveal" style="--delay:0.12s">
+      <div class="avis-card reveal" style="--delay:0.12s" data-tilt data-tilt-intensity="6">
         <svg class="avis-quote-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
         <div class="avis-card-stars">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2L22 9.3l-5 5 1.2 7L12 18l-6.2 3.3L7 14.3 2 9.3l7.1-1.1L12 2z"/></svg>
@@ -671,7 +784,7 @@
       </div>
 
       <!-- Avis 3 -->
-      <div class="avis-card reveal" style="--delay:0.19s">
+      <div class="avis-card reveal" style="--delay:0.19s" data-tilt data-tilt-intensity="6">
         <svg class="avis-quote-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
         <div class="avis-card-stars">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.2L22 9.3l-5 5 1.2 7L12 18l-6.2 3.3L7 14.3 2 9.3l7.1-1.1L12 2z"/></svg>

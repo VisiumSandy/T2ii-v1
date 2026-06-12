@@ -1953,3 +1953,289 @@ input, select, textarea { font-family: inherit; touch-action: manipulation; }
   .hero-title { font-size: 2rem; }
   .mobile-link { font-size: 1.6rem; }
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   PROCESS — Comment ça marche (21st.dev Order History style)
+═══════════════════════════════════════════════════════════ */
+.process {
+  padding: 7rem 0;
+  background: var(--white);
+}
+.process-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 6rem;
+  align-items: center;
+}
+.process-left .section-title { margin-bottom: 0.5rem; }
+.process-intro {
+  font-size: 1rem;
+  color: var(--text-mid);
+  line-height: 1.75;
+  max-width: 400px;
+  margin: 0.5rem 0 0;
+}
+.process-left .btn-primary {
+  display: inline-flex;
+  margin-top: 2rem;
+}
+
+/* Timeline */
+.process-timeline { display: flex; flex-direction: column; }
+.process-step {
+  display: flex;
+  gap: 1.25rem;
+}
+.process-step-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+.process-step-icon {
+  width: 44px; height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s;
+}
+.process-step.completed .process-step-icon {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(26,92,219,0.38);
+}
+.process-step.active .process-step-icon {
+  background: var(--grad-btn);
+  color: #fff;
+  box-shadow: 0 4px 24px rgba(26,92,219,0.55);
+  animation: stepPulse 2.8s ease-in-out infinite;
+}
+.process-step.pending .process-step-icon {
+  background: var(--blue-50);
+  border: 1.5px solid var(--border);
+  color: var(--text-soft);
+}
+.process-step:hover .process-step-icon { transform: translateY(-2px) scale(1.05); }
+
+.process-connector {
+  width: 2px;
+  flex: 1;
+  min-height: 28px;
+  margin: 4px 0;
+  border-radius: 2px;
+  background: var(--border);
+}
+.process-step.completed .process-connector { background: var(--accent); }
+.process-step.active .process-connector {
+  background: linear-gradient(to bottom, var(--accent), var(--border));
+}
+
+.process-step-body {
+  padding-bottom: 2.25rem;
+  flex: 1;
+  min-width: 0;
+}
+.process-step.last .process-step-body { padding-bottom: 0; }
+
+.process-step-tag {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+.process-step-tag--active { color: var(--accent); }
+
+.process-step-body h4 {
+  font-family: var(--display);
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.3rem;
+  transition: color var(--transition);
+}
+.process-step.active .process-step-body h4 { color: var(--accent); }
+.process-step-body p {
+  font-size: 0.875rem;
+  color: var(--text-mid);
+  line-height: 1.65;
+}
+
+@keyframes stepPulse {
+  0%, 100% { box-shadow: 0 4px 24px rgba(26,92,219,0.55); }
+  50%       { box-shadow: 0 4px 36px rgba(26,92,219,0.85), 0 0 0 10px rgba(26,92,219,0.1); }
+}
+
+@media (max-width: 900px) {
+  .process-inner { grid-template-columns: 1fr; gap: 3.5rem; }
+  .process-intro { max-width: 100%; }
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   HERO ORBS — blobs lumineux animés
+═══════════════════════════════════════════════════════════ */
+.hero-orbs {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform;
+}
+.hero-orb--1 {
+  width: 520px; height: 520px;
+  background: radial-gradient(circle, rgba(45,110,240,0.28) 0%, transparent 68%);
+  filter: blur(60px);
+  top: -120px; left: -100px;
+  animation: orbFloat1 16s ease-in-out infinite;
+}
+.hero-orb--2 {
+  width: 420px; height: 420px;
+  background: radial-gradient(circle, rgba(77,143,255,0.22) 0%, transparent 65%);
+  filter: blur(70px);
+  bottom: -80px; right: -60px;
+  animation: orbFloat2 20s ease-in-out infinite;
+}
+.hero-orb--3 {
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(26,92,219,0.2) 0%, transparent 65%);
+  filter: blur(50px);
+  top: 35%; left: 38%;
+  animation: orbFloat3 24s ease-in-out infinite;
+}
+
+@keyframes orbFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(70px, 50px) scale(1.06); }
+  66%       { transform: translate(-25px, 80px) scale(0.97); }
+}
+@keyframes orbFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40%       { transform: translate(-90px, -60px) scale(1.08); }
+  70%       { transform: translate(50px, -30px) scale(0.94); }
+}
+@keyframes orbFloat3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  30%       { transform: translate(-60px, 70px) scale(1.12); }
+  65%       { transform: translate(80px, -45px) scale(0.94); }
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   HERO PARTICLES — petits points flottants
+═══════════════════════════════════════════════════════════ */
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+.particle {
+  position: absolute;
+  width: 2px; height: 2px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.55);
+  animation: particleFloat var(--dur, 9s) var(--delay, 0s) ease-in-out infinite;
+  box-shadow: 0 0 4px rgba(77,143,255,0.5);
+}
+@keyframes particleFloat {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  8%   { opacity: 0.8; }
+  85%  { opacity: 0.4; }
+  100% { transform: translateY(-130px) translateX(var(--x, 15px)); opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .hero-particles { display: none; }
+  .hero-orb--3 { display: none; }
+  .hero-orb--1, .hero-orb--2 { filter: blur(80px); opacity: 0.7; }
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   3D CARD TILT — perspective tracking
+═══════════════════════════════════════════════════════════ */
+[data-tilt] {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), box-shadow 0.5s;
+  will-change: transform;
+}
+[data-tilt].is-tilting {
+  transition: transform 0.08s linear, box-shadow 0.2s;
+}
+
+/* Inner content rises forward in 3D space */
+[data-tilt] > * {
+  transform: translateZ(0px);
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+[data-tilt].is-tilting > * {
+  transform: translateZ(14px);
+  transition: transform 0.08s linear;
+}
+
+/* Shimmer highlight layer on tilt */
+[data-tilt]::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,0.08) 0%, transparent 65%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 10;
+}
+[data-tilt].is-tilting::after { opacity: 1; }
+
+
+/* ═══════════════════════════════════════════════════════════
+   CURSOR GLOW — spotlight qui suit la souris (desktop)
+═══════════════════════════════════════════════════════════ */
+.cursor-glow {
+  position: fixed;
+  width: 380px; height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center,
+    rgba(45,110,240,0.08) 0%,
+    rgba(45,110,240,0.04) 35%,
+    transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.4s;
+  left: -999px; top: -999px;
+}
+
+@media (hover: none) {
+  .cursor-glow { display: none; }
+  [data-tilt] {
+    transform-style: flat;
+    transform: none !important;
+    will-change: auto;
+  }
+  [data-tilt]::after { display: none; }
+  [data-tilt] > * { transform: none !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-orb, .particle { animation: none !important; }
+  .cursor-glow { display: none; }
+  [data-tilt] { transform: none !important; }
+}
